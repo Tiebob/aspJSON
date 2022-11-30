@@ -882,6 +882,8 @@ class JSONobject
 		
 		set arr = new JSONArray
 		
+		rs.MoveFirst
+		
 		while not rs.eof
 			set obj = new JSONobject
 		
@@ -1081,6 +1083,8 @@ class JSONarray
 	' Load properties from a ADO RecordSet object
 	public sub LoadRecordSet(byref rs)
 		dim obj, field
+		
+		rs.MoveFirst
 		
 		while not rs.eof
 			set obj = new JSONobject
